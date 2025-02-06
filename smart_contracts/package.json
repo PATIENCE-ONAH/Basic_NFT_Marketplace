@@ -1,0 +1,34 @@
+{
+    "name": "nft-marketplace",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A basic NFT marketplace using Solidity and Hardhat",
+    "main": "hardhat.config.js",
+    "scripts": {
+        "compile": "npx hardhat compile",
+        "test": "npx hardhat test",
+        "deploy": "npx hardhat run scripts/deploy.js --network sepolia",
+        "lint": "solhint 'contracts/**/*.sol'",
+        "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+        "format": "prettier --write .",
+        "coverage": "hardhat coverage",
+        "gas-report": "npx hardhat test --network hardhat --report-gas"
+    },
+    "devDependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.2.3",
+        "@openzeppelin/contracts": "^4.5.0",
+        "chai": "^4.3.4",
+        "dotenv": "^16.0.0",
+        "ethers": "^5.7.2",
+        "hardhat": "^2.9.1",
+        "hardhat-deploy": "^0.14.0",
+        "hardhat-gas-reporter": "^1.0.7",
+        "prettier": "^2.5.1",
+        "prettier-plugin-solidity": "^1.0.0-beta.19",
+        "solhint": "^3.3.6",
+        "solidity-coverage": "^0.7.13"
+    },
+    "mocha": {
+        "timeout": 10000000
+    }
+}
