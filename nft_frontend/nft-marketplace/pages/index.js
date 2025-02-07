@@ -1,8 +1,11 @@
 import { useAccount } from "wagmi";
 import NFTCard from "@/components/NFTCard";
 import { useEffect, useState } from "react";
-import { fetchListedNFTs } from "@/utils/fetchNFTs";
-const { isConnected } = useAccount();
+import { fetchListedNFTs } from "@/utils/fetchNFT";
+
+
+export default function Home() {
+  const { isConnected } = useAccount();
 const [listedNfts, setListedNfts] = useState([]);
 const [loading, setLoading] = useState(true);
 
@@ -20,8 +23,6 @@ useEffect(() => {
   }
 }, [isConnected]);
 
-
-export default function Home() {
   return (
     <div className="container mx-auto">
       <h1 className="py-4 px-4 font-bold text-2xl">Listed Items</h1>
