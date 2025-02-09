@@ -9,7 +9,7 @@ export default function MintNFT({ marketplaceAddress }) {
     const [successMessage, setSuccessMessage] = useState("");
 
     // mint NFT using nftMarketplaceAbi
-    const { config: mintConfig } = usePrepareContractWrite({
+    const { write: mintNFT } = useWriteContract({
         address: marketplaceAddress, 
         abi: nftMarketplaceAbi,
         functionName: "mintNFT",
@@ -17,7 +17,7 @@ export default function MintNFT({ marketplaceAddress }) {
         enabled: !!tokenURI,
     });
 
-    const { write: mintNFT } = useWriteContract(mintConfig);
+    // const { write: mintNFT } = useWriteContract(mintConfig);
 
     const handleMint = async () => {
         if (!mintNFT) return;
